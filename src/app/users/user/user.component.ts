@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -16,5 +16,12 @@ export class UserComponent implements OnInit {
       id: this.route.queryParams['id'],
       name: this.route.queryParams['name'],
     };
+
+    this.route.params.subscribe((param: Params)=>{
+      this.user = {
+        id: this.route.queryParams['id'],
+        name: this.route.queryParams['name'],
+      };
+    })
   }
 }
