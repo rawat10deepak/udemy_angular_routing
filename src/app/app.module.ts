@@ -47,7 +47,7 @@ const routes: Routes = [
     component: PageNotFoundComponent,
   },
   {
-    path: 'something',
+    path: '**',
     redirectTo: '/not-found',
   },
 ];
