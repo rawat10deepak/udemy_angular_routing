@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
@@ -15,9 +15,11 @@ export class AuthService {
 
   login() {
     this.loggedIn = true;
+    alert('you are logged in');
   }
 
   logout() {
     this.loggedIn = true;
+    alert('you are logged out');
   }
 }
