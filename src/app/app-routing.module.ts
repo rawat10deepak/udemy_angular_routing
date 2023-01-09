@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGaurd } from './auth-gaurd.service';
 import { CanDeactivateGaurd } from './servers/edit-server/can-deactivate.gaurd.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const appRoutes: Routes = [
   {
@@ -38,13 +39,14 @@ const appRoutes: Routes = [
       {
         path: ':id/edit',
         component: EditServerComponent,
-        canDeactivate:[CanDeactivateGaurd]
+        canDeactivate: [CanDeactivateGaurd],
       },
     ],
   },
   {
     path: 'not-found',
-    component: PageNotFoundComponent,
+    component: ErrorPageComponent,
+    data: { message: 'page not found!' },
   },
   {
     path: '**',
