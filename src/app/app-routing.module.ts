@@ -8,6 +8,7 @@ import { ServerComponent } from './servers/server/server.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGaurd } from './auth-gaurd.service';
+import { CanDeactivateGaurd } from './servers/edit-server/can-deactivate.gaurd.service';
 
 const appRoutes: Routes = [
   {
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
       {
         path: ':id/edit',
         component: EditServerComponent,
+        canDeactivate:[CanDeactivateGaurd]
       },
     ],
   },
